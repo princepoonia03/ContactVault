@@ -11,7 +11,7 @@ const ContactDetails = ({ contact, id }) => {
 
     // Function to delete the contact by the ID element destructured from the passed prop
     const handleClick = async () => {
-        fetch(`http://localhost:8181/delete-contact/${id}`, {
+        fetch(`https://contact-vault-api.vercel.app/${id}`, {
             method: 'DELETE'
         })
             .then(() => {
