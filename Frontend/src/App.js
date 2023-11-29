@@ -16,7 +16,7 @@ function App() {
 
     // API Call to bring all contact data at once
     const getContacts = async () => {
-        const base = `http://localhost:8181/view-contacts`;
+        const base = `https://contact-vault-api.vercel.app/view-contacts`;
         const response = await fetch(base);
         const data = await response.json();
         if (data) {
