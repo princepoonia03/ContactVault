@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 const ContactCard = ({contact}) => {
     // Destructuring the prop passed from the parent element
     let {_id, fullName, homeTown, phoneNumber, emailAddress} = contact;
-    let link = `https://contact-vault-api.vercel.app/view-contact/${_id}`;
+    let link = `https://contact-vault-api.vercel.app/view-contacts/${_id}`;
     return (
         // Functionality of clicking any single contact and taking to the contact edit or delete page
         <Link to={link}>
