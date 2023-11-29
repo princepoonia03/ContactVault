@@ -58,7 +58,7 @@ const ModifyForm = ({contactData}) => {
             "emailAddress": emailAddress,
         };
 
-        fetch(`http://localhost:8181/modify-contact/${id}`, {
+        fetch(`https://contact-vault-api.vercel.app/modify-contact/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
