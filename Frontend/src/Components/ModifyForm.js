@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
-const ModifyForm = ({contactData}) => {
+const ModifyForm = ({ contactData }) => {
     // Extracting the id from the URL passed by the user
     const { id } = useParams();
 
@@ -28,21 +28,17 @@ const ModifyForm = ({contactData}) => {
 
     // Function to store the input values from the form to their respective states
     const handleChange = (event) => {
-        const {name, value} = event.target;
-        if (name === 'fullName')
-        {
+        const { name, value } = event.target;
+        if (name === 'fullName') {
             setfullName(value);
         }
-        else if (name === 'hometown')
-        {
+        else if (name === 'hometown') {
             sethomeTown(value);
         }
-        else if (name === 'phoneNumber')
-        {
+        else if (name === 'phoneNumber') {
             setphoneNumber(value);
         }
-        else if (name === 'emailAddress')
-        {
+        else if (name === 'emailAddress') {
             setemailAddress(value);
         }
     };
@@ -58,21 +54,21 @@ const ModifyForm = ({contactData}) => {
             "emailAddress": emailAddress,
         };
 
-        fetch(`http://localhost:8181/modify-contact/${id}`, {
+        fetch(`https://contact-vault-ui.vercel.app/modify-contact/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
         })
-        .then((response) => {
-            navigate(`/view-contact/${id}`);
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+            .then((response) => {
+                navigate(`/view-contact/${id}`);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     };
-    
+
 
 
     return (
@@ -82,30 +78,30 @@ const ModifyForm = ({contactData}) => {
                 <br />
                 <br />
                 <br />
-                <TextField InputLabelProps={{ style: { color: "#D5DEF5"}}} inputProps={{ style: { color: "#D5DEF5" }}} onChange={handleChange} value={fullName} name="fullName" fullWidth id="standard-basic" label="Full Name" variant="standard" />
+                <TextField InputLabelProps={{ style: { color: "#D5DEF5" } }} inputProps={{ style: { color: "#D5DEF5" } }} onChange={handleChange} value={fullName} name="fullName" fullWidth id="standard-basic" label="Full Name" variant="standard" />
                 <br />
                 <br />
                 <br />
                 <br />
-                <TextField InputLabelProps={{ style: { color: "#D5DEF5"}}} inputProps={{ style: { color: "#D5DEF5" }}} onChange={handleChange} value={homeTown} name="hometown" fullWidth id="standard-basic" label="Hometown" variant="standard" />
+                <TextField InputLabelProps={{ style: { color: "#D5DEF5" } }} inputProps={{ style: { color: "#D5DEF5" } }} onChange={handleChange} value={homeTown} name="hometown" fullWidth id="standard-basic" label="Hometown" variant="standard" />
                 <br />
                 <br />
                 <br />
                 <br />
-                <TextField InputLabelProps={{ style: { color: "#D5DEF5"}}} inputProps={{ style: { color: "#D5DEF5" }}} onChange={handleChange} value={phoneNumber} name="phoneNumber" fullWidth id="standard-basic" label="Contact Number" variant="standard" />
+                <TextField InputLabelProps={{ style: { color: "#D5DEF5" } }} inputProps={{ style: { color: "#D5DEF5" } }} onChange={handleChange} value={phoneNumber} name="phoneNumber" fullWidth id="standard-basic" label="Contact Number" variant="standard" />
                 <br />
                 <br />
                 <br />
                 <br />
-                <TextField InputLabelProps={{ style: { color: "#D5DEF5"}}} inputProps={{ style: { color: "#D5DEF5" }}} onChange={handleChange} value={emailAddress} name="emailAddress" fullWidth id="standard-basic" label="Email Address" variant="standard" />
+                <TextField InputLabelProps={{ style: { color: "#D5DEF5" } }} inputProps={{ style: { color: "#D5DEF5" } }} onChange={handleChange} value={emailAddress} name="emailAddress" fullWidth id="standard-basic" label="Email Address" variant="standard" />
                 <br />
                 <br />
                 <br />
                 <br />
-                <Button sx={{ color: "#D5DEF5", backgroundColor: "#003c66"}} onClick={handleClick} size="large" variant="outlined">Update Contact</Button>
+                <Button sx={{ color: "#D5DEF5", backgroundColor: "#003c66" }} onClick={handleClick} size="large" variant="outlined">Update Contact</Button>
             </center>
         </div>
     );
 }
- 
+
 export default ModifyForm;
