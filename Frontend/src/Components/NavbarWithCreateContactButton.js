@@ -15,7 +15,7 @@ export default function Navbar() {
                         ContactVault
                     </Typography>
                     {/* A button on the navbar to create a new contact */}
-                    <Link style={{ color: "#001C30"}} to='http://localhost:3000/create-contact'><AddIcon fontSize='large'/></Link>
+                    <Link style={{ color: "#001C30" }} to='https://contact-vault-ui.vercel.app/create-contact'><AddIcon fontSize='large' /></Link>
                 </Toolbar>
             </AppBar>
         </Box>

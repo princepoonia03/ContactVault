@@ -15,7 +15,7 @@ export default function Navbar() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "#001C30" }}>
                         ContactVault
                     </Typography>
-                    <Link style={{ color: "#001C30" }} to='http://localhost:3000/'><ContactsIcon fontSize='large'/></Link>
+                    <Link style={{ color: "#001C30" }} to='https://contact-vault-ui.vercel.app/'><ContactsIcon fontSize='large' /></Link>
                 </Toolbar>
             </AppBar>
         </Box>
