@@ -39,7 +39,7 @@ const Form = () => {
             "phoneNumber": phoneNumber,
             "emailAddress": emailAddress,
         };
-        fetch('https://contact-vault-ui.vercel.app/create-contact', {
+        fetch('https://contact-vault-api.vercel.app/create-contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
