@@ -16,7 +16,7 @@ function App() {
 
     // API Call to bring all contact data at once
     const getContacts = async () => {
-        const base = `http://localhost:8181/view-contacts`;
+        const base = `https://contact-vault-api.vercel.app/view-contacts`;
         const response = await fetch(base);
         const data = await response.json();
         if (data) {
@@ -44,7 +44,7 @@ function App() {
             {/* Defining all the required routes along with thier pages */}
             <BrowserRouter>
                 <Routes>
-                    <Route exact path="/" element={<Home contactData = {contactData} />}></Route>
+                    <Route exact path="/" element={<Home contactData={contactData} />}></Route>
                     <Route exact path="/create-contact" element={<CreateContact />}></Route>
                     {/* Any URL parameter in the format "URL:/" is referred to as a URL parameter which can later be accessed using the URL parser package */}
                     <Route exact path="/view-contact/:id" element={<ViewContact contactData={contactData} />}></Route>
